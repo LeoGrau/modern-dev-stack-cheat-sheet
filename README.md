@@ -24,9 +24,6 @@
 - [Next.js](./nextjs/)
 - [NestJS](./nestjs/)
 - [PostgreSQL](./postgres/)
-- [Redis](./redis/)
-- [DevOps & CI/CD](./devops/)
-- [Salaries & Industry Insights](./salaries-and-demand/)
 
 ---
 
@@ -48,7 +45,3 @@ This repo is built as a personal knowledge base to:
 - Extend with your own examples, scripts, and tools
 
 ---
-
-## 📄 License
-
-This project is licensed under the MIT License — see the [LICENSE](./LICENSE) file for details.
