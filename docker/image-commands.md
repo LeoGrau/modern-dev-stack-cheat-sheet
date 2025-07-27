@@ -137,5 +137,3 @@ docker build -t mi-app:prod .
 | `docker inspect <imagen>`                      | Muestra los detalles (metadatos) de la imagen      |
 | `docker history <imagen>`                      | Muestra el historial de capas de la imagen         |
 | `docker run --rm <imagen>`                     | Ejecuta la imagen y elimina el contenedor al salir |
-
-

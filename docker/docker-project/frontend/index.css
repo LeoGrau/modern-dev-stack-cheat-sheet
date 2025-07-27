@@ -1,0 +1,27 @@
+* {
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  color: rgb(233, 233, 233);
+  background-color: rgb(19, 19, 19);
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border: 1px solid rgb(192, 192, 192);
+  padding: 40px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.322);
+}
