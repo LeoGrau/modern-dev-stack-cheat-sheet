@@ -1,4 +1,5 @@
 # .NET CLI Commands for Layered Architecture with EF Core
+
 ## ⚙️ 1. Solution Setup
 
 ### Create base solution
@@ -25,8 +26,9 @@ dotnet new classlib -n MyApp.Infrastructure
 **Explanation:**
 
 * `webapi` → creates the API project (controllers, endpoints).
-* `classlib` → creates class library projects for **modular layers**.
 
+* `classlib` → creates class library projects for **modular layers**.
+  
   * `Application` → business logic (services, DTOs).
   * `Domain` → core entities and business rules.
   * `Infrastructure` → data access, EF Core context, repository implementations.
@@ -57,7 +59,6 @@ dotnet add MyApp.Infrastructure reference MyApp.Domain
 ```
 
 `dotnet add MyApp.API reference MyApp.Application` tells .NET to **add a project reference** from `MyApp.Application` to `MyApp.API`, allowing `MyApp.API` to use the code from `MyApp.Application`.
-
 
 **Explanation:**
 
@@ -94,10 +95,16 @@ dotnet add MyApp.Infrastructure package Npgsql.EntityFrameworkCore.PostgreSQL
 
 ## � 4. Migrations and Database Update
 
+Create migrations and update database. Here is the syntax:
+
+```bash
+dotnet ef migrations add <NameOfMigration> --project <PathWhereMigrationsFolderIs> --startup-project <PathWhereDbConfigurationIs>
+```
+
 ### Create a new migration
 
 ```bash
-dotnet ef migrations add InitialCreate --startup-project ../MyApp.API
+dotnet ef migrations add InitialCreate --project ./MyApp.Infrastructure --startup-project ./MyApp.API
 ```
 
 **Explanation:**
@@ -108,7 +115,7 @@ dotnet ef migrations add InitialCreate --startup-project ../MyApp.API
 ### Apply migrations (update the DB)
 
 ```bash
-dotnet ef database update --startup-project ../MyApp.API
+dotnet ef database update --project ../MyApp.Infrastructure  --startup-project ../MyApp.API
 ```
 
 **Explanation:**
